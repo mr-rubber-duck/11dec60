@@ -1,4 +1,5 @@
 import Hero from "@/app/components/hero";
+import AboutSnapshot from "@/app/components/AboutSnapshot";
 
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
         <main>
 
             <Hero />
+            <AboutSnapshot />
         </main>
     );
 }
