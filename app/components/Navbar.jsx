@@ -7,7 +7,7 @@ export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="fixed top-0 left-0 w-full bg-black/80 backdrop-blur-md text-white z-50">
+        <nav className="fixed top-0 left-0 w-full text-right bg-black/80 backdrop-blur-md text-white z-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-16 items-center">
 
@@ -28,11 +28,11 @@ export default function Navbar() {
 
                     {/* Desktop Menu */}
                     <div className="hidden md:flex space-x-6">
-                        <Link href="/" className="hover:text-yellow-400 transition">Home</Link>
-                        <Link href="/timeline" className="hover:text-yellow-400 transition">Timeline</Link>
-                        <Link href="/stories" className="hover:text-yellow-400 transition">Stories</Link>
-                        <Link href="/gallery" className="hover:text-yellow-400 transition">Gallery</Link>
-                        <Link href="/about" className="hover:text-yellow-400 transition">About</Link>
+                        <Link href="/" className="hover:text-yellow-400 transition">الرئيسية</Link>
+                        <Link href="/timeline" className="hover:text-yellow-400 transition">المسار</Link>
+                        <Link href="/stories" className="hover:text-yellow-400 transition">الارشيف</Link>
+                        <Link href="/gallery" className="hover:text-yellow-400 transition">الشهادات</Link>
+
                     </div>
 
                     {/* Mobile menu button */}

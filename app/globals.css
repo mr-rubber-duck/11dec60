@@ -120,3 +120,45 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* stayling i add */
+.typing-loop {
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid #fff;
+    font-weight: bold;
+    display: inline-block;
+
+    animation:
+            typing 7s steps(45, end) infinite, /* ← غير هنا السرعة العامة */
+            blink .7s step-end infinite;
+}
+
+@keyframes typing {
+
+   0% { width: 100% }
+    35% { width: 100% }   /* ← سرعة الكتابة */
+    75% { width: 100% }   /* ← مدة البقاء */
+    100% { width: 0 }     /* ← سرعة الاختفاء */
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
+
+.fade-out {
+    animation: fadeout 1s ease-in forwards;
+    animation-delay: 5s; /* بعد انتهاء الكتابة */
+}
+
+
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
+
+@keyframes fadeout {
+    0% { opacity: 1 }
+    100% { opacity: 0 }
+}
