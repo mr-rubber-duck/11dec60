@@ -1,44 +1,125 @@
+"use client";
+
+import { motion } from "motion/react";
+
 export default function Hero() {
     return (
-        <section className="relative top-3 border-5 h-screen w-full overflow-hidden border-radius-22 ">
-            {/* Background Video */}
-            <video
+        <section className="hero-poster-section">
 
-
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute top-10 border-white  w-full h-full object-cover"
-            >
-                <source src="/Videos/vid.mp4" type="video/mp4" />
-            </video>
-
-            {/* Overlay (optional dark layer) */}
-            <div className="absolute inset-0 bg-black/50"></div>
-
-            {/* Foreground Content */}
-            <div className="relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-6 drop-shadow-lg">
-                <h1 className="text-3xl md:text-6xl text-right font-bold  bottom-5 typing-loop  ">
-                    <br/> يوم نهض الشعب وغيّر مجرى التاريخ<br/>صوت الشعب… بداية الانتصار
-                </h1>
-
-                <p className="text-xl mr:text-2xl  text-right mt-4">
-                    لحظة كسرت هيمنة الاستعمار، وأعلنت أن الجزائر أقوى من القمع.
-                </p>
-
-                <p className=" md:text-xl  top-1  text-right mt-4 max-w-2xl">
-                    في هذا اليوم خرج الجزائريون ليعلنوا للعالم أن إرادة التحرر أقوى من أي قوة
-                    عسكرية. كان ذلك التحوّل الحقيقي في مسار الثورة، وفي نظرة العالم للقضية
-                    الجزائرية.
-                </p>
+            {/* Video Background */}
+            <div className="hero-video-container">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="hero-video"
+                >
+                    <source src="/Videos/vid.mp4" type="video/mp4" />
+                </video>
             </div>
 
+            {/* Gradient Overlay */}
+            <div className="hero-overlay"></div>
 
+            {/* Decorative Border Frame */}
+            <div className="hero-frame"></div>
 
+            {/* Content Container */}
+            <div className="hero-content-container">
+                {/* Top Decorative Line */}
+                <motion.div
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 1, delay: 0.2 }}
+                    className="hero-decorative-line hero-decorative-line-top"
+                ></motion.div>
+
+                {/* Main Content */}
+                <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
+                    className="hero-main-content"
+                >
+                    {/* Main Title */}
+                    <h1 className="font-playfair hero-main-title">
+                        <span className="hero-title-accent">
+                            يوم نهض الشعب
+                        </span>
+                        <span>وغيّر مجرى التاريخ</span>
+                    </h1>
+
+                    {/* Subtitle & Description */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
+                    >
+                        <h2 className="font-playfair hero-subtitle">
+                            صوت الشعب… بداية الانتصار
+                        </h2>
+
+                        <p className="hero-description">
+                            لحظة كسرت هيمنة الاستعمار، وأعلنت أن الجزائر أقوى من القمع.
+                            <br />
+                            في هذا اليوم خرج الجزائريون ليعلنوا للعالم أن إرادة التحرر أقوى من أي قوة عسكرية.
+                        </p>
+
+                        {/* Call to Action Buttons */}
+                        <div className="hero-cta-container">
+                            <motion.a
+                                href="/gallery"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="hero-btn hero-btn-primary"
+                            >
+                                شاهد المعرض
+                            </motion.a>
+                            <motion.a
+                                href="/timeline"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="hero-btn hero-btn-secondary"
+                            >
+                                تتبع المسار الزمني
+                            </motion.a>
+                        </div>
+                    </motion.div>
+                </motion.div>
+
+                {/* Bottom Decorative Line */}
+                <motion.div
+                    initial={{ scaleX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                    className="hero-decorative-line hero-decorative-line-bottom"
+                ></motion.div>
+
+                {/* Scroll Indicator */}
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1, delay: 1 }}
+                    className="hero-scroll-indicator"
+                >
+                    <span className="hero-scroll-text">
+                        اكتشف المزيد
+                    </span>
+                    <motion.div
+                        animate={{ y: [0, 10, 0] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                        className="hero-scroll-mouse"
+                    >
+                        <motion.div
+                            animate={{ y: [0, 15, 0] }}
+                            transition={{ duration: 1.5, repeat: Infinity }}
+                            className="hero-scroll-wheel"
+                        ></motion.div>
+                    </motion.div>
+                </motion.div>
+            </div>
         </section>
-
-
-
     );
 }
+

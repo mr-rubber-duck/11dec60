@@ -1,0 +1,73 @@
+.section {
+    padding: 4rem 0;
+    background-color: #FFF9EC;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.aboutRow,
+.aboutRowReverse {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: stretch;
+    margin-bottom: 4rem;
+}
+
+.aboutRowReverse {
+    direction: rtl;
+    /* لتبديل الاتجاه */
+}
+
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    overflow: hidden;
+    border: 4px solid #4D4332;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.textContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.heading {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 1.5rem;
+    text-align: right;
+    color: #4D4332;
+}
+
+.newspaperDivider {
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #4D4332;
+    width: 50px;
+}
+
+/* نصوص الفقرة */
+.textContent p {
+    text-align: right;
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: #1C1509;
+    margin-bottom: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+
+    .aboutRow,
+    .aboutRowReverse {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+}

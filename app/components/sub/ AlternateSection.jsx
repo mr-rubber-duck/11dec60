@@ -1,25 +1,29 @@
 export default function AlternateSection({ title, text, imageSrc, reverse }) {
     return (
-        <section className="py-16">
-            <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div
-                    className={`
-            ${reverse ? "md:order-2" : "md:order-1"}
-          `}
-                >
+        <section className="section">
+            <div className="container grid grid-2 gap-4" style={{
+                alignItems: 'center'
+            }}>
+                <div style={{
+                    order: reverse ? 2 : 1
+                }}>
                     <img
                         src={imageSrc}
                         alt={title}
-                        className="w-full h-auto rounded-md shadow-lg"
+                        style={{
+                            width: '100%',
+                            height: 'auto',
+                            borderRadius: '0.375rem',
+                            boxShadow: '0 4px 6px rgba(28, 21, 9, 0.2)'
+                        }}
                     />
                 </div>
-                <div
-                    className={`
-            ${reverse ? "md:order-1" : "md:order-2"}
-          `}
-                >
-                    <h2 className="text-2xl font-bold mb-4">{title}</h2>
-                    <p className="text-lg">{text}</p>
+                <div style={{
+                    order: reverse ? 1 : 2
+                }}>
+                    <h2 className="font-playfair heading-shadow mb-3">{title}</h2>
+                    <div className="newspaper-divider"></div>
+                    <p style={{ fontSize: '1.125rem', lineHeight: 1.8 }}>{text}</p>
                 </div>
             </div>
         </section>
