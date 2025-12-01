@@ -15,11 +15,11 @@ export default function Navbar() {
                 left: 0,
                 width: '100%',
                 textAlign: 'right',
-                backgroundColor: 'rgba(28, 21, 9, 0.95)',
+                backgroundColor: 'rgba(15, 15, 15, 0.95)',
                 backdropFilter: 'blur(10px)',
-                color: '#FFF9EC',
+                color: '#f5f5f5',
                 zIndex: 50,
-                borderBottom: '2px solid #9B9B85'
+                borderBottom: '1px solid rgba(139, 38, 53, 0.3)'
             }}>
                 <div style={{
                     maxWidth: '1200px',
@@ -55,8 +55,8 @@ export default function Navbar() {
                             <Link href="/story" className="nav-link">القصة</Link>
                             <Link href="/timeline" className="nav-link">الخط الزمني</Link>
                             <Link href="/gallery" className="nav-link">المعرض</Link>
-                            <Link href="/testimonies" className="nav-link">الشهادات</Link>
-                            <Link href="/impact" className="nav-link">الأثر</Link>
+                            {/* <Link href="/testimonies" className="nav-link">الشهادات</Link>
+                            <Link href="/impact" className="nav-link">الأثر</Link> */}
                             <Link href="/about" className="nav-link">عن المشروع</Link>
                         </div>
 
@@ -68,7 +68,7 @@ export default function Navbar() {
                                     outline: 'none',
                                     border: 'none',
                                     background: 'transparent',
-                                    color: '#FFF9EC',
+                                    color: '#f5f5f5',
                                     cursor: 'pointer'
                                 }}
                             >
@@ -148,21 +148,21 @@ export default function Navbar() {
                 }
 
                 .nav-link {
-                    color: #FFF9EC;
+                    color: #f5f5f5;
                     transition: color 0.3s ease;
                     font-family: 'Roboto Slab', serif;
                     text-decoration: none;
                 }
 
                 .nav-link:hover {
-                    color: #9B9B85;
+                    color: #a63446;
                 }
 
                 .mobile-menu {
-                    background-color: rgba(28, 21, 9, 0.98);
+                    background-color: rgba(15, 15, 15, 0.98);
                     backdrop-filter: blur(10px);
                     text-align: right;
-                    border-top: 1px solid #9B9B85;
+                    border-top: 1px solid rgba(139, 38, 53, 0.3);
                 }
 
                 @media (min-width: 768px) {
@@ -175,14 +175,14 @@ export default function Navbar() {
                     display: block;
                     padding: 0.75rem;
                     border-radius: 0.375rem;
-                    color: #FFF9EC;
+                    color: #f5f5f5;
                     transition: all 0.3s ease;
                     text-decoration: none;
                 }
 
                 .mobile-link:hover {
-                    background-color: #9B9B85;
-                    color: #1C1509;
+                    background-color: rgba(139, 38, 53, 0.2);
+                    color: #a63446;
                 }
             `}</style>
         </>

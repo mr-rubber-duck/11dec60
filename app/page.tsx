@@ -3,7 +3,7 @@ import AboutSnapshot from "@/app/components/AboutSnapshot/AboutSnapshot";
 import NewspaperHeader from "@/app/components/NewspaperHeader";
 import DigitalBook from "@/app/components/DigitalBook";
 import TimelineSection from "@/app/components/TimelineSection";
-import GallerySection from "@/app/components/GallerySection";
+// import GallerySection from "@/app/components/GallerySection";
 
 
 export default function Home() {

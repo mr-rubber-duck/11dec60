@@ -6,10 +6,10 @@ import { Facebook, Twitter, Instagram, Mail } from "lucide-react";
 export default function Footer() {
     return (
         <footer style={{
-            backgroundColor: '#1C1509',
-            borderTop: '2px solid #9B9B85',
+            backgroundColor: '#0f0f0f',
+            borderTop: '1px solid rgba(139, 38, 53, 0.3)',
             textAlign: 'right',
-            color: '#9B9B85',
+            color: '#8a8a8a',
             paddingTop: '4rem',
             paddingBottom: '2rem'
         }}>
@@ -24,14 +24,14 @@ export default function Footer() {
                 {/* Right Section - Contact */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                     <h5 className="font-playfair" style={{
-                        color: '#FFF9EC',
+                        color: '#f5f5f5',
                         fontWeight: 'bold',
                         fontSize: '1.125rem'
                     }}>تواصل معنا</h5>
                     <p style={{
                         fontSize: '0.875rem',
                         lineHeight: '1.75',
-                        color: '#9B9B85'
+                        color: '#c4c4c4'
                     }}>
                         إذا لديك صور أرشيفية، شهادات، أو وثائق، تواصل معنا لتضمينها في الأرشيف.
                         نحن نسعى لتوثيق كل لحظة من هذا اليوم التاريخي.
@@ -43,13 +43,13 @@ export default function Footer() {
                             alignItems: 'center',
                             gap: '0.5rem',
                             padding: '0.75rem 1.5rem',
-                            backgroundColor: '#4D4332',
-                            color: '#FFF9EC',
+                            background: 'linear-gradient(135deg, #8b2635 0%, #6b1e2a 100%)',
+                            color: '#f5f5f5',
                             fontSize: '0.875rem',
                             fontWeight: 500,
                             borderRadius: '0.5rem',
                             transition: 'all 0.3s ease',
-                            boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+                            boxShadow: '0 4px 6px rgba(139, 38, 53, 0.15)',
                             textDecoration: 'none',
                             width: 'fit-content'
                         }}
@@ -63,7 +63,7 @@ export default function Footer() {
                 {/* Middle Section - Links */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                     <h5 className="font-playfair" style={{
-                        color: '#FFF9EC',
+                        color: '#f5f5f5',
                         fontWeight: 'bold',
                         fontSize: '1.125rem'
                     }}>روابط سريعة</h5>
@@ -77,42 +77,42 @@ export default function Footer() {
                     }}>
                         <li>
                             <Link href="/" className="footer-link" style={{
-                                color: '#9B9B85',
+                                color: '#c4c4c4',
                                 transition: 'color 0.3s ease',
                                 display: 'block'
                             }}>الصفحة الرئيسية</Link>
                         </li>
                         <li>
                             <Link href="/timeline" className="footer-link" style={{
-                                color: '#9B9B85',
+                                color: '#c4c4c4',
                                 transition: 'color 0.3s ease',
                                 display: 'block'
                             }}>الخط الزمني</Link>
                         </li>
                         <li>
                             <Link href="/gallery" className="footer-link" style={{
-                                color: '#9B9B85',
+                                color: '#c4c4c4',
                                 transition: 'color 0.3s ease',
                                 display: 'block'
                             }}>معرض الصور</Link>
                         </li>
                         <li>
                             <Link href="/documents" className="footer-link" style={{
-                                color: '#9B9B85',
+                                color: '#c4c4c4',
                                 transition: 'color 0.3s ease',
                                 display: 'block'
                             }}>وثائق</Link>
                         </li>
                         <li>
                             <Link href="/testimonies" className="footer-link" style={{
-                                color: '#9B9B85',
+                                color: '#c4c4c4',
                                 transition: 'color 0.3s ease',
                                 display: 'block'
                             }}>شهادات</Link>
                         </li>
                         <li>
                             <Link href="/about" className="footer-link" style={{
-                                color: '#9B9B85',
+                                color: '#c4c4c4',
                                 transition: 'color 0.3s ease',
                                 display: 'block'
                             }}>حول الموقع</Link>
@@ -123,25 +123,25 @@ export default function Footer() {
                 {/* Left Section - About */}
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                     <h4 className="font-playfair" style={{
-                        color: '#FFF9EC',
+                        color: '#f5f5f5',
                         fontWeight: 'bold',
                         fontSize: '1.25rem'
                     }}>أرشيف 11 ديسمبر</h4>
                     <p style={{
                         fontSize: '0.875rem',
                         lineHeight: '1.75',
-                        color: '#9B9B85'
+                        color: '#c4c4c4'
                     }}>
                         موقع أرشيفي يوثّق مظاهرات 11 ديسمبر 1960، ويضم مصادر تاريخية، صوراً، شهادات، وتحليلات لتلك اللحظة الحاسمة في تاريخ الجزائر.
                         هذا المشروع هو محاولة للحفاظ على الذاكرة الجماعية.
                     </p>
                     <div style={{
                         paddingTop: '1rem',
-                        borderTop: '1px solid rgba(155, 155, 133, 0.2)'
+                        borderTop: '1px solid rgba(139, 38, 53, 0.2)'
                     }}>
                         <p style={{
                             fontSize: '0.75rem',
-                            color: '#4D4332'
+                            color: '#8a8a8a'
                         }}>
                             © {new Date().getFullYear()} أرشيف 11 ديسمبر. جميع الحقوق محفوظة.
                         </p>
@@ -152,12 +152,13 @@ export default function Footer() {
 
             <style jsx global>{`
                 .footer-link:hover {
-                    color: #FFF9EC !important;
+                    color: #a63446 !important;
                     text-decoration: underline;
                 }
                 .contact-btn:hover {
-                    background-color: #9B9B85 !important;
-                    color: #1C1509 !important;
+                    background: linear-gradient(135deg, #a63446 0%, #8b2635 100%) !important;
+                    box-shadow: 0 6px 12px rgba(139, 38, 53, 0.25) !important;
+                    transform: translateY(-2px);
                 }
             `}</style>
         </footer>

@@ -2,99 +2,403 @@
 
 export default function TimelineSection() {
     return (
-        <section id="timeline-section" className="max-w-7xl mx-auto px-6 lg:px-8 pt-6 md:pt-8 pb-12 md:pb-16" style={{ borderTop: '1px solid #9B9B85' }}>
-            <h2 className="text-4xl font-playfair font-bold text-center mb-10" style={{ color: '#ab7743' }}>
-                المسار الزمني للأحداث
-            </h2>
+        <section id="timeline-section" className="max-w-7xl mx-auto px-6 lg:px-8 pt-12 pb-16"
+            style={{ borderTop: '1px solid rgba(139, 38, 53, 0.3)' }}>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                <div className="space-y-8">
-                    <div className="timeline-item">
-                        <h4 className="font-playfair font-bold text-xl" style={{ color: '#868859' }}>19 ديسمبر 1959: القرار الدولي (خلفية)</h4>
-                        <p className="text-sm" style={{ color: 'rgba(28, 21, 9, 0.9)' }}>
-                            الخلفية الدولية: صدور قرار من الأمم المتحدة يدعو إلى تقرير المصير للشعب الجزائري، وهو ما عزز من موقف الثورة دولياً وشجع الشعب على رفض أي حلول استعمارية.
-                        </p>
-                    </div>
+            {/* Header */}
+            <div className="text-center mb-16">
+                <h2 className="font-playfair font-bold mb-4" style={{
+                    fontSize: 'clamp(2rem, 5vw, 3.5rem)',
+                    background: 'var(--gradient-subtle)',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    backgroundClip: 'text'
+                }}>
+                    المسار الزمني للأحداث
+                </h2>
+                <div style={{
+                    width: '120px',
+                    height: '3px',
+                    background: 'var(--gradient-accent)',
+                    margin: '0 auto',
+                    borderRadius: '2px'
+                }} />
+            </div>
 
-                    <div className="timeline-item">
-                        <h4 className="font-playfair font-bold text-xl" style={{ color: '#868859' }}>ديسمبر 1960: وصول ديغول والتحضير</h4>
-                        <p className="text-sm" style={{ color: 'rgba(28, 21, 9, 0.9)' }}>
-                            الرئيس الفرنسي شارل ديغول يصل إلى الجزائر في محاولة لفرض رؤيته لمستقبل البلاد ضمن الإطار الفرنسي وإنشاء "القوة الثالثة".
-                            التعبئة السرية لجبهة التحرير الوطني (FLN) والقاعدة الشعبية لمواجهة محاولات التضليل والضغط الاستعماري.
-                        </p>
-                    </div>
-
-                    <div className="timeline-item">
-                        <h4 className="font-playfair font-bold text-xl" style={{ color: '#868859' }}>10 ديسمبر 1960: الشرارة الأولى</h4>
-                        <p className="text-sm" style={{ color: 'rgba(28, 21, 9, 0.9)' }}>
-                            بداية أولى الاحتكاكات والمناوشات بين المتظاهرين الجزائريين وأنصار الاستعمار والمستوطنين، خصوصًا في الأحياء التي تضم تركيزاً عالياً من الأوروبيين، احتجاجاً على زيارة ديغول.
-                        </p>
-                    </div>
-
-                    <div className="timeline-item">
-                        <h4 className="font-playfair font-bold text-xl" style={{ color: '#868859' }}>11 ديسمبر 1960: اندلاع المظاهرات الكبرى</h4>
-                        <p className="text-sm" style={{ color: 'rgba(28, 21, 9, 0.9)' }}>
-                            موجة عارمة من الاحتجاجات تضرب المدن الرئيسية، خاصة الجزائر العاصمة (الأحياء الشعبية مثل بلكور والمَدَنِي)، مطالبة بالاستقلال الكامل ورافضة لسياسة ديغول.
-                            الجماهير ترفع العلم الوطني الجزائري لأول مرة بشكل مكثف في وضح النهار بالمدن، معلنة الدعم المطلق للثورة.
-                        </p>
-                    </div>
-
-                    <div className="timeline-item">
-                        <h4 className="font-playfair font-bold text-xl" style={{ color: '#868859' }}>12-13 ديسمبر 1960: تصاعد القمع</h4>
-                        <p className="text-sm" style={{ color: 'rgba(28, 21, 9, 0.9)' }}>
-                            القوات الفرنسية تواجه المتظاهرين بقمع وحشي، يسفر عن سقوط العديد من الشهداء والجرحى المدنيين العزل.
-                            توسع رقعة المظاهرات لتشمل مدناً أخرى مثل وهران وقسنطينة، مؤكدة على وحدة الصف الوطني.
-                        </p>
-                    </div>
-
-                    <div className="timeline-item">
-                        <h4 className="font-playfair font-bold text-xl" style={{ color: '#868859' }}>أواخر ديسمبر 1960: التأثير السياسي والدولي</h4>
-                        <p className="text-sm" style={{ color: 'rgba(28, 21, 9, 0.9)' }}>
-                            فشل ديغول في احتواء الأزمة واضطراره لتغيير خطابه السياسي، والتخلي عن دعم "الجزائر فرنسية".
-                            ازدياد الدعم العالمي لقضية الجزائر في الأمم المتحدة، وتصاعد عزلة فرنسا الدولية.
-                            التحول النهائي نحو حتمية المفاوضات مع الممثل الشرعي الوحيد، مما مهد الطريق لاتفاقيات إيفيان.
-                        </p>
-                    </div>
+            <div className="relative">
+                {/* خط زمني عمودي مركزي */}
+                <div className="absolute right-1/2 transform translate-x-1/2 top-0 bottom-0 w-0.5 hidden md:block"
+                    style={{ background: 'var(--gradient-accent)' }}>
                 </div>
 
-                <div className="flex flex-col justify-center items-center p-6" style={{
-                    border: '1px solid #9B9B85',
-                    backgroundColor: 'rgba(255, 255, 255, 0.5)',
-                    boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)'
-                }}>
-                    <h4 className="text-2xl font-playfair font-bold text-center mb-4" style={{ color: '#743014' }}>
-                        التحول الجذري
-                    </h4>
-                    <p className="text-base text-center mb-6" style={{ color: 'rgba(28, 21, 9, 0.9)' }}>
-                        كانت مظاهرات 11 ديسمبر 1960 النقطة الفاصلة التي أثبتت أن الشعب موحد وراء الثورة، وغيرت مسار الدبلوماسية الدولية لصالح الجزائر.
-                    </p>
+                <div className="space-y-16">
+                    {/* 1959 - السياق الدولي */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                        <div className="md:text-left relative" style={{ paddingLeft: '2rem' }}>
+                            {/* نقطة على الخط الزمني */}
+                            <div className="hidden md:block absolute left-full transform translate-x-[-1.5rem] w-5 h-5 rounded-full"
+                                style={{
+                                    background: 'var(--gradient-primary)',
+                                    border: '2px solid var(--bg-primary)',
+                                    boxShadow: '0 0 0 3px var(--shadow-sm)'
+                                }}>
+                            </div>
 
-                    <h4 className="text-2xl font-playfair font-bold text-center mb-4" style={{ color: '#84592b' }}>
-                        التحول في العقلية الجزائرية (كسر حاجز الخوف)
-                    </h4>
-                    <p className="text-base text-center" style={{ color: 'rgba(28, 21, 9, 0.9)' }}>
-                        وحدة الهدف: بعد ست سنوات من الثورة المسلحة، كان هناك نضج شعبي كامل وإيمان مطلق بأن الاستقلال هو الخيار الوحيد. تم تجاوز مرحلة التردد والبحث عن حلول وسط بشكل نهائي.
-                        <br /><br />
-                        ثقة الشعب في الثورة: أظهرت جبهة التحرير الوطني قدرة هائلة على الصمود العسكري والسياسي، مما منح الجماهير المدنية الثقة لكسر حاجز الخوف والنزول إلى الشوارع في تحدٍ مباشر وعلني لسلطة الاحتلال.
-                        <br /><br />
-                        استخدام الهوية: شهدت المظاهرات رفع العلم الوطني (الجزائري) بشكل جماهيري ولأول مرة بهذه الكثافة في المدن الكبرى، مما حول المظاهرات إلى استعراض للسيادة الوطنية المنشودة بدلاً من مجرد احتجاج.
-                    </p>
+                            <div className="inline-block px-4 py-2 mb-3 rounded" style={{
+                                background: 'var(--gradient-primary)',
+                                color: 'var(--text-primary)',
+                                fontSize: '0.875rem',
+                                fontWeight: 'bold',
+                                boxShadow: '0 2px 8px var(--shadow-sm)'
+                            }}>
+                                19 ديسمبر 1959
+                            </div>
+                            <h4 className="font-playfair font-bold text-2xl mb-3" style={{ color: 'var(--accent-light)' }}>
+                                القرار الأممي التاريخي
+                            </h4>
+                            <div className="p-4 mb-3 rounded" style={{
+                                backgroundColor: 'var(--bg-secondary)',
+                                borderRight: '3px solid var(--border-accent)'
+                            }}>
+                                <p className="text-sm font-semibold mb-2" style={{ color: 'var(--accent-light)' }}>📋 وثيقة أرشيفية:</p>
+                                <p className="text-sm italic" style={{ color: 'var(--text-secondary)' }}>
+                                    "قرار الأمم المتحدة رقم 1514 يؤكد حق الشعوب في تقرير المصير"
+                                </p>
+                            </div>
+                            <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                                في جلسة تاريخية بالجمعية العامة للأمم المتحدة، صوتت 89 دولة لصالح حق الشعب الجزائري في تقرير المصير. كان هذا القرار بمثابة صفعة دبلوماسية لفرنسا التي حاولت تصوير القضية كـ"شأن داخلي"، وأعطى زخماً دولياً غير مسبوق للثورة الجزائرية.
+                            </p>
+                        </div>
+                        <div className="hidden md:block"></div>
+                    </div>
 
-                    <div className="tilt-wrapper mt-6">
-                        <div className="tilt-grid">
-                            <div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div>
-                            <div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div>
-                            <div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div>
-                            <div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div>
-                            <div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div><div className="tilt-area"></div>
+                    {/* 9 ديسمبر 1960 */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                        <div className="hidden md:block"></div>
+                        <div className="md:text-right relative" style={{ paddingRight: '2rem' }}>
+                            <div className="hidden md:block absolute right-full transform translate-x-[1.5rem] w-5 h-5 rounded-full"
+                                style={{
+                                    background: 'var(--gradient-primary)',
+                                    border: '2px solid var(--bg-primary)',
+                                    boxShadow: '0 0 0 3px var(--shadow-sm)'
+                                }}>
+                            </div>
 
-                            <div className="tilt-image" style={{ border: '1px solid #4D4332' }}>
-                                <img src="/images/paix.jpg" alt="خريطة تاريخية" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                            <div className="inline-block px-4 py-2 mb-3 rounded" style={{
+                                background: 'var(--gradient-primary)',
+                                color: 'var(--text-primary)',
+                                fontSize: '0.875rem',
+                                fontWeight: 'bold',
+                                boxShadow: '0 2px 8px var(--shadow-sm)'
+                            }}>
+                                9 ديسمبر 1960
+                            </div>
+                            <h4 className="font-playfair font-bold text-2xl mb-3" style={{ color: 'var(--accent-light)' }}>
+                                وصول ديغول إلى الجزائر
+                            </h4>
+                            <div className="p-4 mb-3 rounded" style={{
+                                backgroundColor: 'var(--bg-secondary)',
+                                borderLeft: '3px solid var(--border-accent)'
+                            }}>
+                                <p className="text-sm font-semibold mb-2" style={{ color: 'var(--accent-light)' }}>🎙️ من الأرشيف الصوتي:</p>
+                                <p className="text-sm italic" style={{ color: 'var(--text-secondary)' }}>
+                                    خطاب ديغول في مطار دار البيضاء: "سأستشير الجزائريين حول مستقبلهم"
+                                </p>
+                            </div>
+                            <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                                الرئيس الفرنسي يصل إلى الجزائر في جولة استفتائية، محاولاً فرض مشروع "القوة الثالثة" - خيار ثالث بين الاستقلال والبقاء تحت الحكم الفرنسي. لكن الشعب الجزائري كان له رأي آخر. بدأت جبهة التحرير الوطني بالتعبئة السرية في الأحياء الشعبية.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* 10 ديسمبر 1960 */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                        <div className="md:text-left relative" style={{ paddingLeft: '2rem' }}>
+                            <div className="hidden md:block absolute left-full transform translate-x-[-1.5rem] w-5 h-5 rounded-full"
+                                style={{
+                                    background: 'var(--gradient-primary)',
+                                    border: '2px solid var(--bg-primary)',
+                                    boxShadow: '0 0 0 3px var(--shadow-sm)'
+                                }}>
+                            </div>
+
+                            <div className="inline-block px-4 py-2 mb-3 rounded" style={{
+                                background: 'var(--gradient-primary)',
+                                color: 'var(--text-primary)',
+                                fontSize: '0.875rem',
+                                fontWeight: 'bold',
+                                boxShadow: '0 2px 8px var(--shadow-sm)'
+                            }}>
+                                10 ديسمبر 1960
+                            </div>
+                            <h4 className="font-playfair font-bold text-2xl mb-3" style={{ color: 'var(--accent-light)' }}>
+                                الشرارة الأولى في بلكور
+                            </h4>
+                            <div className="p-4 mb-3 rounded" style={{
+                                backgroundColor: 'var(--bg-secondary)',
+                                borderRight: '3px solid var(--border-accent)'
+                            }}>
+                                <p className="text-sm font-semibold mb-2" style={{ color: 'var(--accent-light)' }}>👥 شهادة حية:</p>
+                                <p className="text-sm italic" style={{ color: 'var(--text-secondary)' }}>
+                                    "بدأت المناوشات عند ساحة الحكومة، وسرعان ما امتدت إلى أحياء بلكور والقصبة"
+                                </p>
+                            </div>
+                            <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                                في الأحياء الشعبية بالعاصمة، اندلعت أولى المواجهات. شباب جزائريون يرفعون شعارات مؤيدة للاستقلال، بينما تتصدى لهم ميليشيات المستوطنين الأوروبيين. الأجواء متوترة والجميع يترقب ما سيحدث غداً.
+                            </p>
+                        </div>
+                        <div className="hidden md:block"></div>
+                    </div>
+
+                    {/* 11 ديسمبر 1960 - اليوم المفصلي */}
+                    <div className="col-span-full my-12 relative">
+                        {/* نقطة مميزة كبيرة */}
+                        <div className="hidden md:block absolute left-1/2 top-8 transform -translate-x-1/2 w-8 h-8 rounded-full"
+                            style={{
+                                background: 'var(--gradient-primary)',
+                                border: '3px solid var(--bg-primary)',
+                                boxShadow: '0 0 0 5px var(--shadow-md), 0 0 20px var(--shadow-lg)',
+                                animation: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite'
+                            }}>
+                        </div>
+
+                        <div className="max-w-4xl mx-auto p-8 rounded-lg" style={{
+                            background: 'var(--bg-secondary)',
+                            border: '2px solid var(--border-accent)',
+                            boxShadow: '0 8px 24px var(--shadow-md)'
+                        }}>
+                            <div className="inline-block px-6 py-3 mb-6 rounded" style={{
+                                background: 'var(--gradient-primary)',
+                                color: 'var(--text-primary)',
+                                fontSize: '1rem',
+                                fontWeight: 'bold',
+                                boxShadow: '0 4px 12px var(--shadow-md)'
+                            }}>
+                                11 ديسمبر 1960 - اليوم الذي غيّر التاريخ
+                            </div>
+
+                            <h3 className="font-playfair font-bold text-center mb-8" style={{
+                                fontSize: 'clamp(1.75rem, 4vw, 3rem)',
+                                background: 'var(--gradient-subtle)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                backgroundClip: 'text'
+                            }}>
+                                انتفاضة شعب بأكمله
+                            </h3>
+
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                                <div className="p-6 rounded-lg text-center" style={{
+                                    backgroundColor: 'var(--bg-elevated)',
+                                    border: '1px solid var(--border-accent)',
+                                    boxShadow: '0 4px 12px var(--shadow-sm)'
+                                }}>
+                                    <p className="text-4xl font-bold mb-2" style={{ color: 'var(--accent-light)' }}>300,000+</p>
+                                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>متظاهر في العاصمة وحدها</p>
+                                </div>
+                                <div className="p-6 rounded-lg text-center" style={{
+                                    backgroundColor: 'var(--bg-elevated)',
+                                    border: '1px solid var(--border-accent)',
+                                    boxShadow: '0 4px 12px var(--shadow-sm)'
+                                }}>
+                                    <p className="text-4xl font-bold mb-2" style={{ color: 'var(--accent-light)' }}>15</p>
+                                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>مدينة جزائرية انتفضت</p>
+                                </div>
+                                <div className="p-6 rounded-lg text-center" style={{
+                                    backgroundColor: 'var(--bg-elevated)',
+                                    border: '1px solid var(--border-accent)',
+                                    boxShadow: '0 4px 12px var(--shadow-sm)'
+                                }}>
+                                    <p className="text-4xl font-bold mb-2" style={{ color: 'var(--accent-light)' }}>🚩</p>
+                                    <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>العلم الوطني يرفرف علناً</p>
+                                </div>
+                            </div>
+
+                            <div className="text-right p-6 rounded-lg" style={{
+                                backgroundColor: 'var(--bg-primary)',
+                                borderRight: '4px solid var(--border-accent)'
+                            }}>
+                                <p className="text-base leading-relaxed mb-4" style={{ color: 'var(--text-secondary)' }}>
+                                    في صباح يوم الأحد، خرجت الجماهير الجزائرية من الأحياء الشعبية في موجة بشرية لم يشهد لها التاريخ مثيلاً. في بلكور، القصبة، باب الواد، حسين داي، وكل شبر من العاصمة، هتف الشعب بصوت واحد: "الجزائر جزائرية"، "تحيا جبهة التحرير"، "عاش الاستقلال".
+                                </p>
+                                <p className="text-sm font-semibold" style={{ color: 'var(--accent-light)' }}>
+                                    📸 الصور الأرشيفية تظهر بحراً من البشر يحملون الأعلام الجزائرية، متحدين كل التهديدات الاستعمارية
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* 12 ديسمبر 1960 */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                        <div className="hidden md:block"></div>
+                        <div className="md:text-right relative" style={{ paddingRight: '2rem' }}>
+                            <div className="hidden md:block absolute right-full transform translate-x-[1.5rem] w-5 h-5 rounded-full"
+                                style={{
+                                    background: 'var(--gradient-primary)',
+                                    border: '2px solid var(--bg-primary)',
+                                    boxShadow: '0 0 0 3px var(--shadow-sm)'
+                                }}>
+                            </div>
+
+                            <div className="inline-block px-4 py-2 mb-3 rounded" style={{
+                                background: 'var(--gradient-primary)',
+                                color: 'var(--text-primary)',
+                                fontSize: '0.875rem',
+                                fontWeight: 'bold',
+                                boxShadow: '0 2px 8px var(--shadow-sm)'
+                            }}>
+                                12 ديسمبر 1960
+                            </div>
+                            <h4 className="font-playfair font-bold text-2xl mb-3" style={{ color: 'var(--accent-light)' }}>
+                                القمع الدموي
+                            </h4>
+                            <div className="p-4 mb-3 rounded" style={{
+                                backgroundColor: 'var(--bg-secondary)',
+                                borderLeft: '3px solid var(--border-accent)'
+                            }}>
+                                <p className="text-sm font-semibold mb-2" style={{ color: 'var(--accent-light)' }}>⚠️ تقرير أرشيفي:</p>
+                                <p className="text-sm italic" style={{ color: 'var(--text-secondary)' }}>
+                                    "سقوط 123 شهيداً و300 جريح في يوم واحد - المصادر الرسمية الفرنسية"
+                                </p>
+                            </div>
+                            <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                                ردت قوات الاحتلال بوحشية منقطعة النظير. الرصاص الحي يستهدف المتظاهرين العزل، الدبابات تجوب الشوارع، والاعتقالات الجماعية تطال الآلاف. لكن الشعب لم ينكسر، بل ازداد تصميماً وإصراراً.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* 13-14 ديسمبر 1960 */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                        <div className="md:text-left relative" style={{ paddingLeft: '2rem' }}>
+                            <div className="hidden md:block absolute left-full transform translate-x-[-1.5rem] w-5 h-5 rounded-full"
+                                style={{
+                                    background: 'var(--gradient-primary)',
+                                    border: '2px solid var(--bg-primary)',
+                                    boxShadow: '0 0 0 3px var(--shadow-sm)'
+                                }}>
+                            </div>
+
+                            <div className="inline-block px-4 py-2 mb-3 rounded" style={{
+                                background: 'var(--gradient-primary)',
+                                color: 'var(--text-primary)',
+                                fontSize: '0.875rem',
+                                fontWeight: 'bold',
+                                boxShadow: '0 2px 8px var(--shadow-sm)'
+                            }}>
+                                13-14 ديسمبر 1960
+                            </div>
+                            <h4 className="font-playfair font-bold text-2xl mb-3" style={{ color: 'var(--accent-light)' }}>
+                                امتداد الثورة عبر الوطن
+                            </h4>
+                            <div className="p-4 mb-3 rounded" style={{
+                                backgroundColor: 'var(--bg-secondary)',
+                                borderRight: '3px solid var(--border-accent)'
+                            }}>
+                                <p className="text-sm font-semibold mb-2" style={{ color: 'var(--accent-light)' }}>🗺️ خريطة الانتفاضة:</p>
+                                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
+                                    وهران • قسنطينة • عنابة • سطيف • تلمسان • بجاية • سكيكدة
+                                </p>
+                            </div>
+                            <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                                كالنار في الهشيم، انتشرت المظاهرات إلى كل المدن الكبرى. في وهران، اهتزت معاقل الكولون الأوروبيين. في قسنطينة، خرجت الجماهير رغم الحصار العسكري. الرسالة واضحة: الشعب الجزائري موحد ولن يقبل بأقل من الاستقلال الكامل.
+                            </p>
+                        </div>
+                        <div className="hidden md:block"></div>
+                    </div>
+
+                    {/* 20 ديسمبر 1960 */}
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                        <div className="hidden md:block"></div>
+                        <div className="md:text-right relative" style={{ paddingRight: '2rem' }}>
+                            <div className="hidden md:block absolute right-full transform translate-x-[1.5rem] w-5 h-5 rounded-full"
+                                style={{
+                                    background: 'var(--gradient-primary)',
+                                    border: '2px solid var(--bg-primary)',
+                                    boxShadow: '0 0 0 3px var(--shadow-sm)'
+                                }}>
+                            </div>
+
+                            <div className="inline-block px-4 py-2 mb-3 rounded" style={{
+                                background: 'var(--gradient-primary)',
+                                color: 'var(--text-primary)',
+                                fontSize: '0.875rem',
+                                fontWeight: 'bold',
+                                boxShadow: '0 2px 8px var(--shadow-sm)'
+                            }}>
+                                20 ديسمبر 1960
+                            </div>
+                            <h4 className="font-playfair font-bold text-2xl mb-3" style={{ color: 'var(--accent-light)' }}>
+                                الأمم المتحدة تصوت لصالح الجزائر
+                            </h4>
+                            <div className="p-4 mb-3 rounded" style={{
+                                backgroundColor: 'var(--bg-secondary)',
+                                borderLeft: '3px solid var(--border-accent)'
+                            }}>
+                                <p className="text-sm font-semibold mb-2" style={{ color: 'var(--accent-light)' }}>🏛️ القرار الأممي:</p>
+                                <p className="text-sm italic" style={{ color: 'var(--text-secondary)' }}>
+                                    "63 دولة تصوت لصالح استقلال الجزائر في جلسة طارئة"
+                                </p>
+                            </div>
+                            <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                                صور المظاهرات وصلت إلى العالم أجمع. في قاعة الأمم المتحدة بنيويورك، صوتت الأغلبية الساحقة لصالح حق الجزائر في الاستقلال. فرنسا باتت معزولة دبلوماسياً، وديغول يدرك أن اللعبة انتهت.
+                            </p>
+                        </div>
+                    </div>
+
+                    {/* نهاية ديسمبر - الأثر طويل المدى */}
+                    <div className="col-span-full my-12">
+                        <div className="max-w-4xl mx-auto p-8 rounded-lg" style={{
+                            background: 'var(--bg-secondary)',
+                            borderTop: '3px solid var(--border-accent)',
+                            borderBottom: '3px solid var(--border-accent)',
+                            boxShadow: '0 8px 24px var(--shadow-sm)'
+                        }}>
+                            <h3 className="font-playfair font-bold text-center mb-8" style={{
+                                fontSize: 'clamp(1.75rem, 4vw, 3rem)',
+                                background: 'var(--gradient-subtle)',
+                                WebkitBackgroundClip: 'text',
+                                WebkitTextFillColor: 'transparent',
+                                backgroundClip: 'text'
+                            }}>
+                                الطريق إلى الاستقلال: 18 شهراً حاسمة
+                            </h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div className="p-6 rounded-lg" style={{
+                                    backgroundColor: 'var(--bg-elevated)',
+                                    border: '1px solid var(--border-accent)',
+                                    boxShadow: '0 4px 12px var(--shadow-sm)'
+                                }}>
+                                    <h4 className="font-bold text-lg mb-3" style={{ color: 'var(--accent-light)' }}>📅 1961: المفاوضات تبدأ</h4>
+                                    <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                                        في مايو 1961، بدأت المفاوضات الرسمية في إيفيان بفرنسا. ديغول الذي كان يرفض التفاوض مع "جبهة التحرير الإرهابية" أصبح مضطراً للجلوس على طاولة المفاوضات مع الممثل الشرعي للشعب الجزائري.
+                                    </p>
+                                </div>
+                                <div className="p-6 rounded-lg" style={{
+                                    backgroundColor: 'var(--bg-elevated)',
+                                    border: '1px solid var(--border-accent)',
+                                    boxShadow: '0 4px 12px var(--shadow-sm)'
+                                }}>
+                                    <h4 className="font-bold text-lg mb-3" style={{ color: 'var(--accent-light)' }}>🕊️ 1962: الاستقلال</h4>
+                                    <p className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                                        في 18 مارس 1962، وقعت اتفاقيات إيفيان. وفي 5 يوليو 1962، أعلن استقلال الجزائر رسمياً. مظاهرات 11 ديسمبر كانت نقطة التحول الحاسمة التي جعلت هذا الاستقلال حتمية تاريخية.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <style jsx>{`
+                @keyframes pulse {
+                    0%, 100% {
+                        opacity: 1;
+                    }
+                    50% {
+                        opacity: 0.7;
+                    }
+                }
+            `}</style>
         </section>
     );
 }
