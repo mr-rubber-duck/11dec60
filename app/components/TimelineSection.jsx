@@ -1,5 +1,90 @@
 "use client";
 
+import React from 'react';
+
+// Reusable Timeline Event Component
+const TimelineEvent = ({ date, title, archiveType, archiveContent, description, alignment }) => {
+    const isLeft = alignment === 'left';
+
+    return (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+            {/* Left Side */}
+            <div className={`md:text-left relative ${isLeft ? 'order-1' : 'order-2 md:order-1'}`} style={{ paddingLeft: isLeft ? '2rem' : 0, paddingRight: !isLeft ? '2rem' : 0 }}>
+                {isLeft ? (
+                    <EventContent
+                        date={date}
+                        title={title}
+                        archiveType={archiveType}
+                        archiveContent={archiveContent}
+                        description={description}
+                        alignment="left"
+                    />
+                ) : (
+                    <div className="hidden md:block"></div>
+                )}
+            </div>
+
+            {/* Right Side */}
+            <div className={`md:text-right relative ${isLeft ? 'order-2 md:order-2' : 'order-1 md:order-2'}`} style={{ paddingRight: !isLeft ? '2rem' : 0, paddingLeft: isLeft ? '2rem' : 0 }}>
+                {!isLeft ? (
+                    <EventContent
+                        date={date}
+                        title={title}
+                        archiveType={archiveType}
+                        archiveContent={archiveContent}
+                        description={description}
+                        alignment="right"
+                    />
+                ) : (
+                    <div className="hidden md:block"></div>
+                )}
+            </div>
+        </div>
+    );
+};
+
+const EventContent = ({ date, title, archiveType, archiveContent, description, alignment }) => {
+    const isLeft = alignment === 'left';
+
+    return (
+        <div className={`relative ${!isLeft ? 'md:text-right' : ''}`}>
+            <div className={`hidden md:block absolute ${isLeft ? 'left-full translate-x-[-1.5rem]' : 'right-full translate-x-[1.5rem]'} w-5 h-5 rounded-full`}
+                style={{
+                    background: 'var(--gradient-primary)',
+                    border: '2px solid var(--bg-primary)',
+                    boxShadow: '0 0 0 3px var(--shadow-sm)'
+                }}>
+            </div>
+
+            <div className="inline-block px-4 py-2 mb-3 rounded" style={{
+                background: 'var(--gradient-primary)',
+                color: 'var(--text-primary)',
+                fontSize: '0.875rem',
+                fontWeight: 'bold',
+                boxShadow: '0 2px 8px var(--shadow-sm)'
+            }}>
+                {date}
+            </div>
+            <h4 className="font-playfair font-bold text-2xl mb-3" style={{ color: 'var(--accent-light)' }}>
+                {title}
+            </h4>
+            <div className="p-4 mb-3 rounded" style={{
+                backgroundColor: 'var(--bg-secondary)',
+                borderRight: isLeft ? '3px solid var(--border-accent)' : 'none',
+                borderLeft: !isLeft ? '3px solid var(--border-accent)' : 'none'
+            }}>
+                <p className="text-sm font-semibold mb-2" style={{ color: 'var(--accent-light)' }}>{archiveType}</p>
+                <p className="text-sm italic" style={{ color: 'var(--text-secondary)' }}>
+                    {archiveContent}
+                </p>
+            </div>
+            <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                {description}
+            </p>
+        </div>
+    );
+};
+
 export default function TimelineSection() {
     return (
         <section id="timeline-section" className="max-w-7xl mx-auto px-6 lg:px-8 pt-12 pb-16"
@@ -26,133 +111,46 @@ export default function TimelineSection() {
             </div>
 
             <div className="relative">
-                {/* خط زمني عمودي مركزي */}
+                {/* Central Vertical Line (Desktop) */}
                 <div className="absolute right-1/2 transform translate-x-1/2 top-0 bottom-0 w-0.5 hidden md:block"
                     style={{ background: 'var(--gradient-accent)' }}>
                 </div>
 
+                {/* Mobile Vertical Line (Right side for RTL) */}
+                <div className="absolute right-0 top-0 bottom-0 w-0.5 md:hidden"
+                    style={{ background: 'var(--gradient-accent)', right: '1rem' }}>
+                </div>
+
                 <div className="space-y-16">
-                    {/* 1959 - السياق الدولي */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                        <div className="md:text-left relative" style={{ paddingLeft: '2rem' }}>
-                            {/* نقطة على الخط الزمني */}
-                            <div className="hidden md:block absolute left-full transform translate-x-[-1.5rem] w-5 h-5 rounded-full"
-                                style={{
-                                    background: 'var(--gradient-primary)',
-                                    border: '2px solid var(--bg-primary)',
-                                    boxShadow: '0 0 0 3px var(--shadow-sm)'
-                                }}>
-                            </div>
+                    <TimelineEvent
+                        alignment="left"
+                        date="19 ديسمبر 1959"
+                        title="القرار الأممي التاريخي"
+                        archiveType="📋 وثيقة أرشيفية:"
+                        archiveContent='"قرار الأمم المتحدة رقم 1514 يؤكد حق الشعوب في تقرير المصير"'
+                        description='في جلسة تاريخية بالجمعية العامة للأمم المتحدة، صوتت 89 دولة لصالح حق الشعب الجزائري في تقرير المصير. كان هذا القرار بمثابة صفعة دبلوماسية لفرنسا التي حاولت تصوير القضية كـ"شأن داخلي"، وأعطى زخماً دولياً غير مسبوق للثورة الجزائرية.'
+                    />
 
-                            <div className="inline-block px-4 py-2 mb-3 rounded" style={{
-                                background: 'var(--gradient-primary)',
-                                color: 'var(--text-primary)',
-                                fontSize: '0.875rem',
-                                fontWeight: 'bold',
-                                boxShadow: '0 2px 8px var(--shadow-sm)'
-                            }}>
-                                19 ديسمبر 1959
-                            </div>
-                            <h4 className="font-playfair font-bold text-2xl mb-3" style={{ color: 'var(--accent-light)' }}>
-                                القرار الأممي التاريخي
-                            </h4>
-                            <div className="p-4 mb-3 rounded" style={{
-                                backgroundColor: 'var(--bg-secondary)',
-                                borderRight: '3px solid var(--border-accent)'
-                            }}>
-                                <p className="text-sm font-semibold mb-2" style={{ color: 'var(--accent-light)' }}>📋 وثيقة أرشيفية:</p>
-                                <p className="text-sm italic" style={{ color: 'var(--text-secondary)' }}>
-                                    "قرار الأمم المتحدة رقم 1514 يؤكد حق الشعوب في تقرير المصير"
-                                </p>
-                            </div>
-                            <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                                في جلسة تاريخية بالجمعية العامة للأمم المتحدة، صوتت 89 دولة لصالح حق الشعب الجزائري في تقرير المصير. كان هذا القرار بمثابة صفعة دبلوماسية لفرنسا التي حاولت تصوير القضية كـ"شأن داخلي"، وأعطى زخماً دولياً غير مسبوق للثورة الجزائرية.
-                            </p>
-                        </div>
-                        <div className="hidden md:block"></div>
-                    </div>
+                    <TimelineEvent
+                        alignment="right"
+                        date="9 ديسمبر 1960"
+                        title="وصول ديغول إلى الجزائر"
+                        archiveType="🎙️ من الأرشيف الصوتي:"
+                        archiveContent='خطاب ديغول في مطار دار البيضاء: "سأستشير الجزائريين حول مستقبلهم"'
+                        description='الرئيس الفرنسي يصل إلى الجزائر في جولة استفتائية، محاولاً فرض مشروع "القوة الثالثة" - خيار ثالث بين الاستقلال والبقاء تحت الحكم الفرنسي. لكن الشعب الجزائري كان له رأي آخر. بدأت جبهة التحرير الوطني بالتعبئة السرية في الأحياء الشعبية.'
+                    />
 
-                    {/* 9 ديسمبر 1960 */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                        <div className="hidden md:block"></div>
-                        <div className="md:text-right relative" style={{ paddingRight: '2rem' }}>
-                            <div className="hidden md:block absolute right-full transform translate-x-[1.5rem] w-5 h-5 rounded-full"
-                                style={{
-                                    background: 'var(--gradient-primary)',
-                                    border: '2px solid var(--bg-primary)',
-                                    boxShadow: '0 0 0 3px var(--shadow-sm)'
-                                }}>
-                            </div>
+                    <TimelineEvent
+                        alignment="left"
+                        date="10 ديسمبر 1960"
+                        title="الشرارة الأولى في بلكور"
+                        archiveType="👥 شهادة حية:"
+                        archiveContent='"بدأت المناوشات عند ساحة الحكومة، وسرعان ما امتدت إلى أحياء بلكور والقصبة"'
+                        description='في الأحياء الشعبية بالعاصمة، اندلعت أولى المواجهات. شباب جزائريون يرفعون شعارات مؤيدة للاستقلال، بينما تتصدى لهم ميليشيات المستوطنين الأوروبيين. الأجواء متوترة والجميع يترقب ما سيحدث غداً.'
+                    />
 
-                            <div className="inline-block px-4 py-2 mb-3 rounded" style={{
-                                background: 'var(--gradient-primary)',
-                                color: 'var(--text-primary)',
-                                fontSize: '0.875rem',
-                                fontWeight: 'bold',
-                                boxShadow: '0 2px 8px var(--shadow-sm)'
-                            }}>
-                                9 ديسمبر 1960
-                            </div>
-                            <h4 className="font-playfair font-bold text-2xl mb-3" style={{ color: 'var(--accent-light)' }}>
-                                وصول ديغول إلى الجزائر
-                            </h4>
-                            <div className="p-4 mb-3 rounded" style={{
-                                backgroundColor: 'var(--bg-secondary)',
-                                borderLeft: '3px solid var(--border-accent)'
-                            }}>
-                                <p className="text-sm font-semibold mb-2" style={{ color: 'var(--accent-light)' }}>🎙️ من الأرشيف الصوتي:</p>
-                                <p className="text-sm italic" style={{ color: 'var(--text-secondary)' }}>
-                                    خطاب ديغول في مطار دار البيضاء: "سأستشير الجزائريين حول مستقبلهم"
-                                </p>
-                            </div>
-                            <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                                الرئيس الفرنسي يصل إلى الجزائر في جولة استفتائية، محاولاً فرض مشروع "القوة الثالثة" - خيار ثالث بين الاستقلال والبقاء تحت الحكم الفرنسي. لكن الشعب الجزائري كان له رأي آخر. بدأت جبهة التحرير الوطني بالتعبئة السرية في الأحياء الشعبية.
-                            </p>
-                        </div>
-                    </div>
-
-                    {/* 10 ديسمبر 1960 */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                        <div className="md:text-left relative" style={{ paddingLeft: '2rem' }}>
-                            <div className="hidden md:block absolute left-full transform translate-x-[-1.5rem] w-5 h-5 rounded-full"
-                                style={{
-                                    background: 'var(--gradient-primary)',
-                                    border: '2px solid var(--bg-primary)',
-                                    boxShadow: '0 0 0 3px var(--shadow-sm)'
-                                }}>
-                            </div>
-
-                            <div className="inline-block px-4 py-2 mb-3 rounded" style={{
-                                background: 'var(--gradient-primary)',
-                                color: 'var(--text-primary)',
-                                fontSize: '0.875rem',
-                                fontWeight: 'bold',
-                                boxShadow: '0 2px 8px var(--shadow-sm)'
-                            }}>
-                                10 ديسمبر 1960
-                            </div>
-                            <h4 className="font-playfair font-bold text-2xl mb-3" style={{ color: 'var(--accent-light)' }}>
-                                الشرارة الأولى في بلكور
-                            </h4>
-                            <div className="p-4 mb-3 rounded" style={{
-                                backgroundColor: 'var(--bg-secondary)',
-                                borderRight: '3px solid var(--border-accent)'
-                            }}>
-                                <p className="text-sm font-semibold mb-2" style={{ color: 'var(--accent-light)' }}>👥 شهادة حية:</p>
-                                <p className="text-sm italic" style={{ color: 'var(--text-secondary)' }}>
-                                    "بدأت المناوشات عند ساحة الحكومة، وسرعان ما امتدت إلى أحياء بلكور والقصبة"
-                                </p>
-                            </div>
-                            <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                                في الأحياء الشعبية بالعاصمة، اندلعت أولى المواجهات. شباب جزائريون يرفعون شعارات مؤيدة للاستقلال، بينما تتصدى لهم ميليشيات المستوطنين الأوروبيين. الأجواء متوترة والجميع يترقب ما سيحدث غداً.
-                            </p>
-                        </div>
-                        <div className="hidden md:block"></div>
-                    </div>
-
-                    {/* 11 ديسمبر 1960 - اليوم المفصلي */}
+                    {/* 11 December - Special Layout */}
                     <div className="col-span-full my-12 relative">
-                        {/* نقطة مميزة كبيرة */}
                         <div className="hidden md:block absolute left-1/2 top-8 transform -translate-x-1/2 w-8 h-8 rounded-full"
                             style={{
                                 background: 'var(--gradient-primary)',
@@ -228,122 +226,32 @@ export default function TimelineSection() {
                         </div>
                     </div>
 
-                    {/* 12 ديسمبر 1960 */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                        <div className="hidden md:block"></div>
-                        <div className="md:text-right relative" style={{ paddingRight: '2rem' }}>
-                            <div className="hidden md:block absolute right-full transform translate-x-[1.5rem] w-5 h-5 rounded-full"
-                                style={{
-                                    background: 'var(--gradient-primary)',
-                                    border: '2px solid var(--bg-primary)',
-                                    boxShadow: '0 0 0 3px var(--shadow-sm)'
-                                }}>
-                            </div>
+                    <TimelineEvent
+                        alignment="right"
+                        date="12 ديسمبر 1960"
+                        title="القمع الدموي"
+                        archiveType="⚠️ تقرير أرشيفي:"
+                        archiveContent='"سقوط 123 شهيداً و300 جريح في يوم واحد - المصادر الرسمية الفرنسية"'
+                        description='ردت قوات الاحتلال بوحشية منقطعة النظير. الرصاص الحي يستهدف المتظاهرين العزل، الدبابات تجوب الشوارع، والاعتقالات الجماعية تطال الآلاف. لكن الشعب لم ينكسر، بل ازداد تصميماً وإصراراً.'
+                    />
 
-                            <div className="inline-block px-4 py-2 mb-3 rounded" style={{
-                                background: 'var(--gradient-primary)',
-                                color: 'var(--text-primary)',
-                                fontSize: '0.875rem',
-                                fontWeight: 'bold',
-                                boxShadow: '0 2px 8px var(--shadow-sm)'
-                            }}>
-                                12 ديسمبر 1960
-                            </div>
-                            <h4 className="font-playfair font-bold text-2xl mb-3" style={{ color: 'var(--accent-light)' }}>
-                                القمع الدموي
-                            </h4>
-                            <div className="p-4 mb-3 rounded" style={{
-                                backgroundColor: 'var(--bg-secondary)',
-                                borderLeft: '3px solid var(--border-accent)'
-                            }}>
-                                <p className="text-sm font-semibold mb-2" style={{ color: 'var(--accent-light)' }}>⚠️ تقرير أرشيفي:</p>
-                                <p className="text-sm italic" style={{ color: 'var(--text-secondary)' }}>
-                                    "سقوط 123 شهيداً و300 جريح في يوم واحد - المصادر الرسمية الفرنسية"
-                                </p>
-                            </div>
-                            <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                                ردت قوات الاحتلال بوحشية منقطعة النظير. الرصاص الحي يستهدف المتظاهرين العزل، الدبابات تجوب الشوارع، والاعتقالات الجماعية تطال الآلاف. لكن الشعب لم ينكسر، بل ازداد تصميماً وإصراراً.
-                            </p>
-                        </div>
-                    </div>
+                    <TimelineEvent
+                        alignment="left"
+                        date="13-14 ديسمبر 1960"
+                        title="امتداد الثورة عبر الوطن"
+                        archiveType="🗺️ خريطة الانتفاضة:"
+                        archiveContent='وهران • قسنطينة • عنابة • سطيف • تلمسان • بجاية • سكيكدة'
+                        description='كالنار في الهشيم، انتشرت المظاهرات إلى كل المدن الكبرى. في وهران، اهتزت معاقل الكولون الأوروبيين. في قسنطينة، خرجت الجماهير رغم الحصار العسكري. الرسالة واضحة: الشعب الجزائري موحد ولن يقبل بأقل من الاستقلال الكامل.'
+                    />
 
-                    {/* 13-14 ديسمبر 1960 */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                        <div className="md:text-left relative" style={{ paddingLeft: '2rem' }}>
-                            <div className="hidden md:block absolute left-full transform translate-x-[-1.5rem] w-5 h-5 rounded-full"
-                                style={{
-                                    background: 'var(--gradient-primary)',
-                                    border: '2px solid var(--bg-primary)',
-                                    boxShadow: '0 0 0 3px var(--shadow-sm)'
-                                }}>
-                            </div>
-
-                            <div className="inline-block px-4 py-2 mb-3 rounded" style={{
-                                background: 'var(--gradient-primary)',
-                                color: 'var(--text-primary)',
-                                fontSize: '0.875rem',
-                                fontWeight: 'bold',
-                                boxShadow: '0 2px 8px var(--shadow-sm)'
-                            }}>
-                                13-14 ديسمبر 1960
-                            </div>
-                            <h4 className="font-playfair font-bold text-2xl mb-3" style={{ color: 'var(--accent-light)' }}>
-                                امتداد الثورة عبر الوطن
-                            </h4>
-                            <div className="p-4 mb-3 rounded" style={{
-                                backgroundColor: 'var(--bg-secondary)',
-                                borderRight: '3px solid var(--border-accent)'
-                            }}>
-                                <p className="text-sm font-semibold mb-2" style={{ color: 'var(--accent-light)' }}>🗺️ خريطة الانتفاضة:</p>
-                                <p className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-                                    وهران • قسنطينة • عنابة • سطيف • تلمسان • بجاية • سكيكدة
-                                </p>
-                            </div>
-                            <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                                كالنار في الهشيم، انتشرت المظاهرات إلى كل المدن الكبرى. في وهران، اهتزت معاقل الكولون الأوروبيين. في قسنطينة، خرجت الجماهير رغم الحصار العسكري. الرسالة واضحة: الشعب الجزائري موحد ولن يقبل بأقل من الاستقلال الكامل.
-                            </p>
-                        </div>
-                        <div className="hidden md:block"></div>
-                    </div>
-
-                    {/* 20 ديسمبر 1960 */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                        <div className="hidden md:block"></div>
-                        <div className="md:text-right relative" style={{ paddingRight: '2rem' }}>
-                            <div className="hidden md:block absolute right-full transform translate-x-[1.5rem] w-5 h-5 rounded-full"
-                                style={{
-                                    background: 'var(--gradient-primary)',
-                                    border: '2px solid var(--bg-primary)',
-                                    boxShadow: '0 0 0 3px var(--shadow-sm)'
-                                }}>
-                            </div>
-
-                            <div className="inline-block px-4 py-2 mb-3 rounded" style={{
-                                background: 'var(--gradient-primary)',
-                                color: 'var(--text-primary)',
-                                fontSize: '0.875rem',
-                                fontWeight: 'bold',
-                                boxShadow: '0 2px 8px var(--shadow-sm)'
-                            }}>
-                                20 ديسمبر 1960
-                            </div>
-                            <h4 className="font-playfair font-bold text-2xl mb-3" style={{ color: 'var(--accent-light)' }}>
-                                الأمم المتحدة تصوت لصالح الجزائر
-                            </h4>
-                            <div className="p-4 mb-3 rounded" style={{
-                                backgroundColor: 'var(--bg-secondary)',
-                                borderLeft: '3px solid var(--border-accent)'
-                            }}>
-                                <p className="text-sm font-semibold mb-2" style={{ color: 'var(--accent-light)' }}>🏛️ القرار الأممي:</p>
-                                <p className="text-sm italic" style={{ color: 'var(--text-secondary)' }}>
-                                    "63 دولة تصوت لصالح استقلال الجزائر في جلسة طارئة"
-                                </p>
-                            </div>
-                            <p className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
-                                صور المظاهرات وصلت إلى العالم أجمع. في قاعة الأمم المتحدة بنيويورك، صوتت الأغلبية الساحقة لصالح حق الجزائر في الاستقلال. فرنسا باتت معزولة دبلوماسياً، وديغول يدرك أن اللعبة انتهت.
-                            </p>
-                        </div>
-                    </div>
+                    <TimelineEvent
+                        alignment="right"
+                        date="20 ديسمبر 1960"
+                        title="الأمم المتحدة تصوت لصالح الجزائر"
+                        archiveType="🏛️ القرار الأممي:"
+                        archiveContent='"63 دولة تصوت لصالح استقلال الجزائر في جلسة طارئة"'
+                        description='صور المظاهرات وصلت إلى العالم أجمع. في قاعة الأمم المتحدة بنيويورك، صوتت الأغلبية الساحقة لصالح حق الجزائر في الاستقلال. فرنسا باتت معزولة دبلوماسياً، وديغول يدرك أن اللعبة انتهت.'
+                    />
 
                     {/* نهاية ديسمبر - الأثر طويل المدى */}
                     <div className="col-span-full my-12">

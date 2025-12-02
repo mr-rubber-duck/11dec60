@@ -33,7 +33,7 @@ export default function DigitalBook() {
                     border: '4px solid #4D4332',
                     boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
                     padding: '1.5rem',
-                    backgroundColor: 'rgba(255, 255, 255, 0.5)',
+                    backgroundColor: 'rgba(19, 18, 18, 0.5)',
                     position: 'relative',
                     height: 'auto',
                     paddingBottom: '3rem'

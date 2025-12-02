@@ -67,7 +67,7 @@ export default function Hero() {
                         </p>
 
                         {/* Call to Action Buttons */}
-                        <div className="hero-cta-container">
+                        <div className="hero-cta-container ">
                             <motion.a
                                 href="/gallery"
                                 whileHover={{ scale: 1.05 }}

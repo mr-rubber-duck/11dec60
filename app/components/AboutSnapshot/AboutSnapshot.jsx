@@ -82,6 +82,27 @@ export default function AboutSnapshot() {
                         </p>
                     </div>
                 </div>
+
+                {/* poster4  */}
+                <div className={styles.aboutRowReverse}>
+                    <div className={styles.textContent}>
+                        <h2 className={styles.heading}>أسباب المظاهرات</h2>
+                        <div className={styles.newspaperDivider}></div>
+                        <p>
+                            وجاءت هذه المظاهرات التي أرادها الشعب الجزائري، سلمية، حيث خرج فيها الجزائريون لتأكيد رفضهم لسياسة الجنرال شارل ديغول الرامية إلى الإبقاء على الجزائر جزء من فرنسا وضد حلم المعمرين الفرنسيين الهادف إلى ترسيخ وتجسيد فكرة الجزائر فرنسية.
+                            <br /><br />
+                            بيد أن سلمية المتظاهرين الجزائريين في جميع أحياء العاصمة الجزائر وعديد المدن والقرى الجزائرية قابلها قمع السلطات الاستعمارية بوحشية مما أدى إلى سقوط العديد من الشهداء.
+                        </p>
+                    </div>
+                    <div className={styles.imageWrapper}>
+                        <Image
+                            src="/pic/id2.jpg"
+                            alt="المظاهرات السلمية"
+                            fill
+                            style={{ objectFit: 'cover' }}
+                        />
+                    </div>
+                </div>
             </div>
         </section>
     );

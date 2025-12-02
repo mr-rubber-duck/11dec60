@@ -15,7 +15,7 @@ export default function Home() {
             <NewspaperHeader />
             <AboutSnapshot />
             <DigitalBook />
-            <TimelineSection />
+            {/*<TimelineSection /> */}
 
 
         </main>

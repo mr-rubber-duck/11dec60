@@ -13,6 +13,7 @@ export default function Navbar() {
                 position: 'fixed',
                 top: 0,
                 left: 0,
+                height: '100px',
                 width: '100%',
                 textAlign: 'right',
                 backgroundColor: 'rgba(15, 15, 15, 0.95)',
@@ -36,15 +37,18 @@ export default function Navbar() {
                                     fontSize: '1.125rem',
                                     cursor: 'pointer'
                                 }}>
-                                    <img
-                                        src="logo.png"
-                                        alt="Logo"
-                                        style={{
-                                            width: '3.75rem',
-                                            height: '3rem',
-                                            objectFit: 'contain'
-                                        }}
-                                    />
+                                    <div>
+                                        <img
+                                            src="logo.png"
+                                            alt="Logo"
+                                            style={{
+                                                width: '3.75rem',
+                                                height: '3rem',
+                                                objectFit: 'contain'
+                                            }}
+                                        />
+                                        <h4 className="text-left "> أرشيفي</h4>
+                                    </div>
                                 </span>
                             </Link>
                         </div>
@@ -53,10 +57,9 @@ export default function Navbar() {
                         <div className="desktop-menu">
                             <Link href="/" className="nav-link">الرئيسية</Link>
                             <Link href="/story" className="nav-link">القصة</Link>
-                            <Link href="/timeline" className="nav-link">الخط الزمني</Link>
+                            <Link href="/timeline/TimelineSection.jsx" className="nav-link">الخط الزمني</Link>
                             <Link href="/gallery" className="nav-link">المعرض</Link>
-                            {/* <Link href="/testimonies" className="nav-link">الشهادات</Link>
-                            <Link href="/impact" className="nav-link">الأثر</Link> */}
+                            <Link href="/chat" className="nav-link">الدردشة</Link>
                             <Link href="/about" className="nav-link">عن المشروع</Link>
                         </div>
 
@@ -112,8 +115,7 @@ export default function Navbar() {
                             <Link href="/story" className="mobile-link">القصة</Link>
                             <Link href="/timeline" className="mobile-link">الخط الزمني</Link>
                             <Link href="/gallery" className="mobile-link">المعرض</Link>
-                            <Link href="/testimonies" className="mobile-link">الشهادات</Link>
-                            <Link href="/impact" className="mobile-link">الأثر</Link>
+
                             <Link href="/about" className="mobile-link">عن المشروع</Link>
                         </div>
                     </div>
