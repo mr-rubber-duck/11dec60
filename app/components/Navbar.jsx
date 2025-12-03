@@ -57,7 +57,7 @@ export default function Navbar() {
                         <div className="desktop-menu">
                             <Link href="/" className="nav-link">الرئيسية</Link>
                             <Link href="/story" className="nav-link">القصة</Link>
-                            <Link href="/timeline/TimelineSection.jsx" className="nav-link">الخط الزمني</Link>
+                            {/* <Link href="/timeline/TimelineSection.jsx" className="nav-link">الخط الزمني</Link> */}
                             <Link href="/gallery" className="nav-link">المعرض</Link>
                             <Link href="/chat" className="nav-link">الدردشة</Link>
                             <Link href="/about" className="nav-link">عن المشروع</Link>
@@ -113,7 +113,7 @@ export default function Navbar() {
                         }}>
                             <Link href="/" className="mobile-link">الرئيسية</Link>
                             <Link href="/story" className="mobile-link">القصة</Link>
-                            <Link href="/timeline" className="mobile-link">الخط الزمني</Link>
+                            {/* <Link href="/timeline" className="mobile-link">الخط الزمني</Link> */}
                             <Link href="/gallery" className="mobile-link">المعرض</Link>
 
                             <Link href="/about" className="mobile-link">عن المشروع</Link>

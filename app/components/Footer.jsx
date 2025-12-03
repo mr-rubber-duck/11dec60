@@ -82,13 +82,13 @@ export default function Footer() {
                                 display: 'block'
                             }}>الصفحة الرئيسية</Link>
                         </li>
-                        <li>
+                        {/* <li>
                             <Link href="/timeline" className="footer-link" style={{
                                 color: '#c4c4c4',
                                 transition: 'color 0.3s ease',
                                 display: 'block'
                             }}>الخط الزمني</Link>
-                        </li>
+                        </li> */}
                         <li>
                             <Link href="/gallery" className="footer-link" style={{
                                 color: '#c4c4c4',

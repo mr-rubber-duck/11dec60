@@ -4,12 +4,51 @@ import TimelineSection from "../components/TimelineSection";
 
 export default function StoryPage() {
     return (
-        <div style={{
-            minHeight: '100vh',
-            paddingTop: '5rem',
-            background: 'var(--bg-primary)'
-        }}>
-            <section className="max-w-6xl mx-auto px-6 lg:px-8 py-12">
+        <section className="relative w-full min-h-screen overflow-hidden">
+
+            {/* <div style={{
+                minHeight: '100vh',
+                paddingTop: '5rem',
+                background: 'var(--bg-primary)'
+            }}> */}
+
+            {/* Background Video */}
+            <video
+                className="absolute inset-0 w-full h-full object-cover"
+                style={{
+                    zIndex: -2,        // <<< forces the video behind everything
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                }}
+                autoPlay
+                muted
+                loop
+                playsInline
+            >
+                <source src="/Videos/vid2.mp4" type="video/mp4" />
+            </video>
+
+            {/* Dark Overlay */}
+            <div
+                className="absolute inset-0 bg-black/60"
+                style={{
+                    zIndex: -1,        // <<< overlay behind content but above video
+                }}
+            ></div>
+
+            {/* Content Container (Above Video) */}
+            <div
+                className="relative z-10 container"
+                style={{
+                    minHeight: "100vh",
+                    display: "flex",
+                    flexDirection: "column",
+                    paddingTop: "6rem",
+                    paddingBottom: "1rem"
+                }}
+            >
+
                 {/* Header Section */}
                 <div style={{
                     display: 'flex',
@@ -166,7 +205,8 @@ export default function StoryPage() {
 
                 {/* Timeline Section */}
                 <TimelineSection />
-            </section>
-        </div>
+
+            </div>
+        </section>
     );
 }
