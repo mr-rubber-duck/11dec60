@@ -47,7 +47,7 @@ export default function Hero() {
                         <span className="hero-title-accent">
                             يوم نهض الشعب
                         </span>
-                        <span>وغيّر مجرى التاريخ</span>
+                        <span >وغيّر مجرى التاريخ</span>
                     </h1>
 
                     {/* Subtitle & Description */}
@@ -77,12 +77,13 @@ export default function Hero() {
                                 شاهد المعرض
                             </motion.a>
                             <motion.a
-                                href="/timeline"
+                                href="/chat"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="hero-btn hero-btn-secondary"
                             >
-                                تتبع المسار الزمني
+                                ابحث
+                                بواسطة ذكاء اصطناعي
                             </motion.a>
                         </div>
                     </motion.div>
@@ -97,19 +98,17 @@ export default function Hero() {
                 ></motion.div>
 
                 {/* Scroll Indicator */}
-                <motion.div
+                {/* <motion.div
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1, delay: 1 }}
                     className="hero-scroll-indicator"
                 >
-                    <span className="hero-scroll-text">
-                        اكتشف المزيد
-                    </span>
+                   
                     <motion.div
                         animate={{ y: [0, 10, 0] }}
                         transition={{ duration: 1.5, repeat: Infinity }}
-                        className="hero-scroll-mouse"
+                        className="hero-scroll-mouse la"
                     >
                         <motion.div
                             animate={{ y: [0, 15, 0] }}
@@ -117,7 +116,7 @@ export default function Hero() {
                             className="hero-scroll-wheel"
                         ></motion.div>
                     </motion.div>
-                </motion.div>
+                </motion.div> */}
             </div>
         </section>
     );

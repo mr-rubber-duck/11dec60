@@ -9,6 +9,7 @@ export default function Footer() {
             backgroundColor: '#0f0f0f',
             borderTop: '1px solid rgba(139, 38, 53, 0.3)',
             textAlign: 'right',
+
             color: '#8a8a8a',
             paddingTop: '4rem',
             paddingBottom: '2rem'
@@ -56,7 +57,7 @@ export default function Footer() {
                         className="contact-btn"
                     >
                         <Mail size={16} />
-                        أرسل رسالة
+                        تواصل مع  المطور
                     </Link>
                 </div>
 
@@ -82,13 +83,13 @@ export default function Footer() {
                                 display: 'block'
                             }}>الصفحة الرئيسية</Link>
                         </li>
-                        {/* <li>
-                            <Link href="/timeline" className="footer-link" style={{
+                        <li>
+                            <Link href="/story" className="footer-link" style={{
                                 color: '#c4c4c4',
                                 transition: 'color 0.3s ease',
                                 display: 'block'
-                            }}>الخط الزمني</Link>
-                        </li> */}
+                            }}>القصة</Link>
+                        </li>
                         <li>
                             <Link href="/gallery" className="footer-link" style={{
                                 color: '#c4c4c4',
@@ -96,26 +97,23 @@ export default function Footer() {
                                 display: 'block'
                             }}>معرض الصور</Link>
                         </li>
+
                         <li>
-                            <Link href="/documents" className="footer-link" style={{
+                            <Link href="/chat" className="footer-link" style={{
                                 color: '#c4c4c4',
                                 transition: 'color 0.3s ease',
                                 display: 'block'
-                            }}>وثائق</Link>
+                            }}  > الدردشة </Link>
                         </li>
+
                         <li>
-                            <Link href="/testimonies" className="footer-link" style={{
+                            <Link href="/contact" className="footer-link" style={{
                                 color: '#c4c4c4',
                                 transition: 'color 0.3s ease',
                                 display: 'block'
-                            }}>شهادات</Link>
-                        </li>
-                        <li>
-                            <Link href="/about" className="footer-link" style={{
-                                color: '#c4c4c4',
-                                transition: 'color 0.3s ease',
-                                display: 'block'
-                            }}>حول الموقع</Link>
+                            }}>
+                                المطور
+                            </Link>
                         </li>
                     </ul>
                 </div>

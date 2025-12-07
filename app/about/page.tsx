@@ -71,7 +71,7 @@ export default function AboutPage() {
                             role="المطور"
                             title="Developer"
                             icon="💻"
-                            names=""
+                            names={["Taha amine lassami"]}
                             description="بناء وتطوير الواجهة والأنظمة الخلفية للمشروع." />
 
                         {/* Designer Card */}
@@ -79,7 +79,7 @@ export default function AboutPage() {
                             role="المصمم"
                             title="Designer"
                             icon="🎨"
-                            names=""
+                            names={["lasami taha amine", "aya  minnet allah merdaci", "aya marir"]}
                             description="تصميم التجربة البصرية والواجهة الفنية للموقع." />
 
                         {/* Helper Card */}
@@ -87,20 +87,21 @@ export default function AboutPage() {
                             role="المساعد"
                             title="Helper"
                             icon="🤝"
-                            names=""
+                            names={["hana Ghell"]}
+                            description="المساهمة في جمع المحتوى." />
 
-                            description="المساهمة في جمع المحتوى وتدقيق المعلومات التاريخية." />
                     </div>
                 </div>
 
             </div>
+
         </section>
             <Footer /></>
     );
 }
 
 
-function TeamCard({ role, title, icon, names, description }: { role: string, title: string, icon: string, names: string, description: string }) {
+function TeamCard({ role, title, icon, names, description }: { role: string, title: string, icon: string, names: string[], description: string }) {
     return (
         <div className="card" style={{
             padding: '2rem',
@@ -160,21 +161,29 @@ function TeamCard({ role, title, icon, names, description }: { role: string, tit
 
             <div className="newspaper-divider" style={{ width: '50px', margin: '1rem auto' }}></div>
 
-            <div style={{
-                background: 'var(--bg-tertiary)',
-                padding: '0.75rem 1.5rem',
-                borderRadius: '8px',
-                width: '100%',
-                marginBottom: '1rem'
-            }}>
-                <p style={{
-                    color: 'var(--text-secondary)',
-                    fontFamily: "'Roboto Slab', serif",
-                    fontSize: '1.1rem'
+            {names.length > 0 && (
+                <div style={{
+                    background: 'var(--bg-tertiary)',
+                    padding: '0.75rem 1.5rem',
+                    borderRadius: '8px',
+                    width: '100%',
+                    marginBottom: '1rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.5rem'
                 }}>
-                    taha amine eddine lassami
-                </p>
-            </div>
+                    {names.map((name, index) => (
+                        <p key={index} style={{
+                            color: 'var(--text-secondary)',
+                            fontFamily: "'Roboto Slab', serif",
+                            fontSize: '1.1rem',
+                            margin: 0
+                        }}>
+                            {name}
+                        </p>
+                    ))}
+                </div>
+            )}
 
             <p style={{
                 color: 'var(--text-muted)',

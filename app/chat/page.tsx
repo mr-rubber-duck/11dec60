@@ -76,14 +76,19 @@ export default function ChatPage() {
     };
 
     return (
-        <section className="relative w-full min-h-screen overflow-hidden">
+        <section
+            className="fixed inset-0 w-full h-full overflow-hidden"
+            style={{
+                zIndex: 40,
+                paddingTop: "70px", // Match Navbar height
+            }}
+        >
 
             {/* Background Video */}
-            <video
-                className="absolute inset-0 w-full h-full object-cover"
+            {/* <video
+                className="fixed inset-0 w-full h-full object-cover"
                 style={{
-                    zIndex: -2,        // <<< forces the video behind everything
-                    position: "absolute",
+                    zIndex: -2,
                     top: 0,
                     left: 0,
                 }}
@@ -93,13 +98,13 @@ export default function ChatPage() {
                 playsInline
             >
                 <source src="/Videos/vid3.mp4" type="video/mp4" />
-            </video>
+            </video> */}
 
             {/* Dark Overlay */}
             <div
-                className="absolute inset-0 bg-black/60"
+                className="fixed inset-0 bg-black/60"
                 style={{
-                    zIndex: -1,        // <<< overlay behind content but above video
+                    zIndex: -1,
                 }}
             ></div>
 
@@ -107,10 +112,10 @@ export default function ChatPage() {
             <div
                 className="relative z-10 container"
                 style={{
-                    minHeight: "100vh",
+                    height: "100%",
                     display: "flex",
                     flexDirection: "column",
-                    paddingTop: "6rem",
+                    paddingTop: "2rem", // Internal spacing
                     paddingBottom: "1rem"
                 }}
             >
@@ -147,12 +152,14 @@ export default function ChatPage() {
                 <div
                     className="card chat-card"
                     style={{
-                        height: "70vh",    // <— this forces the chat area to scroll
+                        flex: 1,
+                        minHeight: 0,      // Crucial for nested flex scrolling
                         display: "flex",
                         flexDirection: "column",
                         overflow: "hidden",
                         border: "1px solid var(--border-accent)",
-                        boxShadow: "0 10px 40px var(--shadow-lg)"
+                        boxShadow: "0 10px 40px var(--shadow-lg)",
+                        marginBottom: "1rem"
                     }}
                 >
 

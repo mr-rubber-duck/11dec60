@@ -13,7 +13,7 @@ export default function Navbar() {
                 position: 'fixed',
                 top: 0,
                 left: 0,
-                height: '100px',
+                height: '70px',
                 width: '100%',
                 textAlign: 'right',
                 backgroundColor: 'rgba(15, 15, 15, 0.95)',
@@ -31,27 +31,29 @@ export default function Navbar() {
 
                         {/* Logo / Title */}
                         <div style={{ flexShrink: 0 }}>
-                            <Link href="/">
-                                <span className="font-playfair" style={{
+                            {/* <Link href="/"> */}
+                            <a href="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
+                                <img
+                                    src="logo.png"
+                                    alt="Logo"
+                                    style={{
+                                        width: '3rem',       // smaller width for better responsiveness
+                                        height: '3rem',
+                                        objectFit: 'contain',
+                                    }}
+                                />
+                                <h4 style={{
+                                    margin: 0,
                                     fontWeight: 'bold',
                                     fontSize: '1.125rem',
-                                    cursor: 'pointer'
+                                    color: '#f5f5f5'
                                 }}>
-                                    <div>
-                                        <img
-                                            src="logo.png"
-                                            alt="Logo"
-                                            style={{
-                                                width: '3.75rem',
-                                                height: '3rem',
-                                                objectFit: 'contain'
-                                            }}
-                                        />
-                                        <h4 className="text-left "> أرشيفي</h4>
-                                    </div>
-                                </span>
-                            </Link>
+                                    أرشيفي
+                                </h4>
+                            </a>
+                            {/* </Link> */}
                         </div>
+
 
                         {/* Desktop Menu */}
                         <div className="desktop-menu">

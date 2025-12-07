@@ -2,8 +2,8 @@
 
 export default function GallerySection() {
     return (
-        <>
-            <div className="newspaper-divider max-w-7xl mx-auto px-6 lg:px-8"></div>
+        <main style={{ backgroundColor: 'var(--bg-primary)', minHeight: '100vh', paddingTop: '70px' }}>
+            <div className=" bgnewspaper-divider max-w-7xl mx-auto px-6 lg:px-8"></div>
 
             <section id="gallery-section" className="max-w-7xl mx-auto px-6 lg:px-8 py-12 md:py-16">
                 <h2 className="text-4xl font-playfair font-bold text-center mb-10" style={{ color: '#b7957f' }}>
@@ -16,7 +16,7 @@ export default function GallerySection() {
                         border: '1px solid #4D4332',
                         padding: '0.75rem',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-                        backgroundColor: 'white'
+                        backgroundColor: 'var(--bg-secondary)'
                     }}>
                         <div className="tilt-wrapper mb-3">
                             <div className="tilt-grid">
@@ -59,7 +59,7 @@ export default function GallerySection() {
                         border: '1px solid #4D4332',
                         padding: '0.75rem',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-                        backgroundColor: 'white'
+                        backgroundColor: 'var(--bg-secondary)'
                     }}>
                         <div className="tilt-wrapper mb-3">
                             <div className="tilt-grid">
@@ -106,7 +106,7 @@ export default function GallerySection() {
                         border: '1px solid #4D4332',
                         padding: '0.75rem',
                         boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.1)',
-                        backgroundColor: 'white'
+                        backgroundColor: 'var(--bg-secondary)'
                     }}>
                         <div className="tilt-wrapper mb-3">
                             <div className="tilt-grid">
@@ -237,6 +237,6 @@ export default function GallerySection() {
                     </div>
                 </div>
             </section>
-        </>
+        </main>
     );
 }
