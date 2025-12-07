@@ -69,12 +69,12 @@ export default function Hero() {
                         {/* Call to Action Buttons */}
                         <div className="hero-cta-container ">
                             <motion.a
-                                href="/gallery"
+                                href="/docementry"
                                 whileHover={{ scale: 1.05 }}
                                 whileTap={{ scale: 0.95 }}
                                 className="hero-btn hero-btn-primary"
                             >
-                                شاهد المعرض
+                                شاهد الوثائقيات
                             </motion.a>
                             <motion.a
                                 href="/chat"
@@ -82,8 +82,7 @@ export default function Hero() {
                                 whileTap={{ scale: 0.95 }}
                                 className="hero-btn hero-btn-secondary"
                             >
-                                ابحث
-                                بواسطة ذكاء اصطناعي
+                                استخدم المساعد الذكي
                             </motion.a>
                         </div>
                     </motion.div>

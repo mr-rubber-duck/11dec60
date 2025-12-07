@@ -1008,3 +1008,499 @@ a:hover {
         bottom: 2rem;
     }
 }
+
+/* ================================================================== */
+/* COMPREHENSIVE MOBILE RESPONSIVE STYLES */
+/* ================================================================== */
+
+/* Mobile-first responsive utilities */
+@media (max-width: 480px) {
+
+    /* Base container adjustments */
+    .container {
+        padding: 0 1rem !important;
+    }
+
+    /* Typography scaling */
+    h1 {
+        font-size: 1.75rem !important;
+    }
+
+    h2 {
+        font-size: 1.5rem !important;
+    }
+
+    h3 {
+        font-size: 1.25rem !important;
+    }
+
+    h4 {
+        font-size: 1.1rem !important;
+    }
+
+    p {
+        font-size: 0.95rem !important;
+    }
+
+    /* Card adjustments */
+    .card {
+        padding: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+
+    /* Section padding */
+    .section {
+        padding: 2rem 0 !important;
+    }
+}
+
+/* Small tablets and large phones */
+@media (max-width: 640px) {
+    .container {
+        padding: 0 0.75rem !important;
+    }
+
+    /* Gallery Grid - Single column on mobile */
+    .grid-cols-1,
+    [class*="grid-cols-"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Grid utilities */
+    .grid {
+        gap: 1rem !important;
+    }
+
+    .grid-2 {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Tablet breakpoint */
+@media (max-width: 768px) {
+
+    /* Container */
+    .container {
+        padding: 0 1rem;
+        max-width: 100%;
+    }
+
+    /* About rows */
+    .aboutRow,
+    .aboutRowReverse {
+        grid-template-columns: 1fr !important;
+        gap: 1.5rem !important;
+    }
+
+    /* Image wrapper */
+    .imageWrapper {
+        min-height: 300px !important;
+    }
+
+    /* Text content */
+    .textContent {
+        padding: 1rem !important;
+    }
+
+    /* Tilt wrapper - Gallery images */
+    .tilt-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        aspect-ratio: 4/3 !important;
+    }
+
+    /* Board */
+    .board {
+        height: 280px !important;
+    }
+
+    .board-text {
+        font-size: 0.7rem !important;
+        line-height: 1.4 !important;
+        width: 60% !important;
+        right: 20% !important;
+    }
+
+    /* Sticky notes */
+    :root {
+        --note-width: 100px !important;
+        --note-height: 90px !important;
+    }
+
+    /* Article columns */
+    .article-columns {
+        column-count: 1 !important;
+    }
+
+    /* Timeline items */
+    .timeline-item {
+        padding-right: 1rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+/* ================================================================== */
+/* GALLERY PAGE RESPONSIVE STYLES */
+/* ================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Gallery section */
+    #gallery-section {
+        padding: 1rem !important;
+        padding-top: 1.5rem !important;
+    }
+
+    /* Gallery title */
+    #gallery-section h2 {
+        font-size: 1.75rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* Gallery grid - single column on mobile */
+    #gallery-section .grid,
+    #gallery-section>div>div[class*="grid"] {
+        grid-template-columns: 1fr !important;
+        gap: 1rem !important;
+    }
+
+    /* Gallery columns */
+    #gallery-section>div>div>div {
+        padding: 0.5rem !important;
+    }
+
+    /* Tilt wrapper inside gallery */
+    #gallery-section .tilt-wrapper {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0.5rem 0 !important;
+    }
+
+    /* Tilt image */
+    #gallery-section .tilt-image {
+        border-radius: 4px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    #gallery-section {
+        padding: 0.75rem !important;
+        padding-top: 1rem !important;
+    }
+
+    #gallery-section h2 {
+        font-size: 1.5rem !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
+/* ================================================================== */
+/* CHAT PAGE RESPONSIVE STYLES */
+/* ================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Chat container */
+    .chat-card {
+        margin: 0 !important;
+        border-radius: 8px !important;
+    }
+
+    /* Messages area */
+    .messages-area {
+        padding: 0.75rem !important;
+    }
+
+    /* Message bubbles */
+    .message-bubble {
+        max-width: 90% !important;
+        padding: 0.75rem 1rem !important;
+        font-size: 0.9rem !important;
+        border-radius: 12px !important;
+    }
+
+    /* Input area */
+    .input-area {
+        padding: 0.75rem !important;
+    }
+
+    /* Textarea */
+    .input-area textarea {
+        min-height: 44px !important;
+        font-size: 16px !important;
+        /* Prevents zoom on iOS */
+        padding: 0.625rem !important;
+    }
+
+    /* Send button */
+    .input-area .btn {
+        padding: 0.625rem 1rem !important;
+        font-size: 0.9rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Chat card */
+    .chat-card {
+        border-radius: 4px !important;
+    }
+
+    /* Messages area */
+    .messages-area {
+        padding: 0.5rem !important;
+    }
+
+    /* Message bubbles */
+    .message-bubble {
+        max-width: 95% !important;
+        padding: 0.625rem 0.875rem !important;
+        font-size: 0.85rem !important;
+    }
+
+    /* Typing dots */
+    .typing-dot {
+        width: 5px !important;
+        height: 5px !important;
+    }
+}
+
+/* ================================================================== */
+/* NAVBAR RESPONSIVE STYLES */
+/* ================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Mobile menu adjustments are in component */
+    nav .container {
+        padding: 0 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        height: 60px !important;
+    }
+
+    nav .container {
+        padding: 0 0.75rem !important;
+    }
+
+    nav img {
+        width: 2.5rem !important;
+        height: 2.5rem !important;
+    }
+
+    nav h4 {
+        font-size: 1rem !important;
+    }
+}
+
+/* ================================================================== */
+/* FOOTER RESPONSIVE STYLES */
+/* ================================================================== */
+
+@media (max-width: 768px) {
+    footer .grid {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+
+    footer {
+        padding-top: 2rem !important;
+        padding-bottom: 1.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding-top: 1.5rem !important;
+        text-align: center !important;
+    }
+
+    footer h4,
+    footer h5 {
+        text-align: center !important;
+    }
+
+    footer p {
+        text-align: center !important;
+        font-size: 0.8rem !important;
+    }
+
+    footer ul {
+        align-items: center !important;
+    }
+
+    footer a.contact-btn {
+        margin: 0 auto !important;
+    }
+}
+
+/* ================================================================== */
+/* ABOUT PAGE RESPONSIVE STYLES */
+/* ================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Team cards grid */
+    .about-team-grid,
+    [style*="gridTemplateColumns: repeat(auto-fit"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Card padding */
+    .about-page .card,
+    section .card {
+        padding: 1.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    section .card {
+        padding: 1rem !important;
+    }
+
+    /* Team card icons */
+    .team-icon {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 2rem !important;
+    }
+}
+
+/* ================================================================== */
+/* STORY PAGE RESPONSIVE STYLES */
+/* ================================================================== */
+
+@media (max-width: 768px) {
+
+    /* Header section */
+    .story-header {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 0.5rem !important;
+    }
+
+    /* Blockquote */
+    blockquote {
+        padding: 1.5rem !important;
+        margin: 1.5rem auto !important;
+    }
+
+    /* Text content box */
+    .text-content-box {
+        padding: 1.5rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    blockquote {
+        padding: 1rem !important;
+        margin: 1rem auto !important;
+    }
+
+    blockquote p {
+        font-size: 1rem !important;
+    }
+}
+
+/* ================================================================== */
+/* TIMELINE RESPONSIVE STYLES */
+/* ================================================================== */
+
+@media (max-width: 768px) {
+    .timeline-container {
+        padding: 0 0.5rem !important;
+    }
+
+    .timeline-item {
+        padding-right: 1.25rem !important;
+    }
+
+    .timeline-item::before {
+        width: 10px !important;
+        height: 10px !important;
+        right: -6px !important;
+    }
+
+    .timeline-content {
+        padding: 1rem !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .timeline-item {
+        padding-right: 1rem !important;
+        border-right-width: 1px !important;
+    }
+
+    .timeline-item::before {
+        width: 8px !important;
+        height: 8px !important;
+        right: -5px !important;
+    }
+}
+
+/* ================================================================== */
+/* GENERAL UTILITY RESPONSIVE CLASSES */
+/* ================================================================== */
+
+/* Hide on mobile */
+@media (max-width: 768px) {
+    .hide-mobile {
+        display: none !important;
+    }
+}
+
+/* Show only on mobile */
+@media (min-width: 769px) {
+    .show-mobile-only {
+        display: none !important;
+    }
+}
+
+/* Flex direction column on mobile */
+@media (max-width: 768px) {
+    .flex-col-mobile {
+        flex-direction: column !important;
+    }
+
+    .text-center-mobile {
+        text-align: center !important;
+    }
+
+    .w-full-mobile {
+        width: 100% !important;
+    }
+}
+
+/* Touch-friendly tap targets */
+@media (max-width: 768px) {
+
+    button,
+    .btn,
+    a.btn,
+    input[type="submit"] {
+        min-height: 44px !important;
+        min-width: 44px !important;
+    }
+}
+
+/* Prevent horizontal scroll */
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* Safe area padding for notched devices */
+@supports (padding: max(0px)) {
+    .safe-area-bottom {
+        padding-bottom: max(1rem, env(safe-area-inset-bottom));
+    }
+
+    .safe-area-top {
+        padding-top: max(1rem, env(safe-area-inset-top));
+    }
+}
