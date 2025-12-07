@@ -37,37 +37,67 @@ export default function ChatPage() {
     };
 
     const sendMessage = async () => {
-        if (!input.trim()) return;
+        if (!input.trim() || loading) return;
 
-        const userMsg: Message = { role: "user", content: input };
+        const userMsg: Message = { role: "user", content: input.trim() };
         const newMessages = [...messages, userMsg];
 
         setMessages(newMessages);
         setInput("");
         setLoading(true);
 
+        // Create abort controller for timeout
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 65000); // 65 seconds timeout
+
         try {
             const res = await fetch("/api/gemini", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ messages: newMessages }),
+                signal: controller.signal,
             });
+
+            clearTimeout(timeoutId);
 
             const data = await res.json();
 
+            // Check for API error response
+            if (!res.ok || data.error) {
+                const errorMessage = data.error || "حدث خطأ أثناء معالجة الطلب";
+                setMessages([
+                    ...newMessages,
+                    { role: "assistant", content: `⚠️ ${errorMessage}` },
+                ]);
+                return;
+            }
+
             const bot = data?.choices?.[0]?.message;
 
-            if (!bot || !bot.content)
-                return setMessages([
+            if (!bot || !bot.content || bot.content.trim() === "") {
+                setMessages([
                     ...newMessages,
-                    { role: "assistant", content: "حدث خطأ أثناء معالجة الرد." },
+                    { role: "assistant", content: "⚠️ لم يتم استلام رد - يرجى المحاولة مرة أخرى" },
                 ]);
+                return;
+            }
 
-            setMessages([...newMessages, bot]);
-        } catch {
+            setMessages([...newMessages, { role: "assistant", content: bot.content }]);
+
+        } catch (err: any) {
+            clearTimeout(timeoutId);
+
+            let errorMessage = "خطأ في الاتصال بالخادم";
+
+            if (err.name === "AbortError") {
+                errorMessage = "انتهت مهلة الطلب - الرد يستغرق وقتًا طويلاً، يرجى المحاولة مرة أخرى";
+            } else if (err.message) {
+                errorMessage = err.message;
+            }
+
             setMessages([
                 ...newMessages,
-                { role: "assistant", content: "خطأ في الاتصال بالخادم." },
+                { role: "assistant", content: `⚠️ ${errorMessage}` },
             ]);
         } finally {
             setLoading(false);
@@ -84,23 +114,6 @@ export default function ChatPage() {
             }}
         >
 
-            {/* Background Video */}
-            {/* <video
-                className="fixed inset-0 w-full h-full object-cover"
-                style={{
-                    zIndex: -2,
-                    top: 0,
-                    left: 0,
-                }}
-                autoPlay
-                muted
-                loop
-                playsInline
-            >
-                <source src="/Videos/vid3.mp4" type="video/mp4" />
-            </video> */}
-
-            {/* Dark Overlay */}
             <div
                 className="fixed inset-0 bg-black/60"
                 style={{
