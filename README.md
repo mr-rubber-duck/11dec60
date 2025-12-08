@@ -13,9 +13,10 @@
 [عرض المشروع](https://archives.geekdz.tech/) • [View Demo](https://archives.geekdz.tech/)
 
 ---
+<img width="800" height="956" alt="previe2" src="https://github.com/user-attachments/assets/1390d995-e6b7-4dd4-b97b-a66da50fb683" />
+<img width="800" height="956" alt="previe1" src="https://github.com/user-attachments/assets/6957f0c3-c184-4ee8-b723-cf4d148db92b" />
 
-<img src="images/previe2.png" alt="Project Preview" width="800"/>
-<img src="images/preview1.png" alt="Project Preview" width="800"/>
+
 
 </div>
 
